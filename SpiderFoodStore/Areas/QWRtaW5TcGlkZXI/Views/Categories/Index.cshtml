@@ -1,0 +1,49 @@
+﻿@model IEnumerable<SpiderFoodStore.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QWRtaW5TcGlkZXI/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Categories")" class="btn btn-success" role="button">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <tr>
+        <th>
+            No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </th>
+        <th></th>
+    </tr>
+
+    @{ int no = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{no++;}
+                @no
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img src="~/Content/Images/@item.ImagePath" height="50" />
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "Categories", new {id=item.Id})" class="btn btn-warning" role="button"><i class="fa fa-pencil" aria-hidden="true"></i>  Edit</a>
+                <a href="@Url.Action("Details", "Categories", new {id=item.Id})" class="btn btn-info" role="button"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</a>
+                <a href="@Url.Action("Delete", "Categories", new {id=item.Id})" class="btn btn-danger" role="button"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>

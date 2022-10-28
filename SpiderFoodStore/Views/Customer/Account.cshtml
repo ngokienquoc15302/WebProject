@@ -1,0 +1,15 @@
+﻿@using SpiderFoodStore.Models
+
+@if (ViewBag.Customer == null)
+{
+    <a href="@Url.Action("Login", "Customer")"><i class="fa fa-user"></i> Login</a>
+}
+else
+{
+    Customer customer = (Customer)ViewBag.Customer;
+    <div style="flex-direction: row; display: flex; align-items: center;">
+        <a href="#"><img src="/Content/Images/@customer.ImagePath" style="height: 24px; width: 24px; border-radius: 12px;" /> @customer.Firstname</a>
+        &nbsp;
+        <a href="@Url.Action("Logout", "Customer")"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+    </div>
+}

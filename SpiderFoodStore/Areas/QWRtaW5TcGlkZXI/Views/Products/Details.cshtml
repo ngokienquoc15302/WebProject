@@ -1,0 +1,115 @@
+﻿@model SpiderFoodStore.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/QWRtaW5TcGlkZXI/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @ViewBag.CategoryTitle
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            <img src="~/Content/Images/@Model.ImagePath" height="300"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AtUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AtUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RemainingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RemainingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuanlityPurchased)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuanlityPurchased)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfViews)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberOfViews)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isHide)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isHide)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-warning mr-3", @role = "button" })
+    @Html.ActionLink("Back to List", "Index", routeValues: null, htmlAttributes: new { @class = "btn btn-secondary", @role = "button" })
+</p>

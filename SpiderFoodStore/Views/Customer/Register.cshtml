@@ -1,0 +1,88 @@
+﻿@model SpiderFoodStore.Models.Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/Login/stylesRegister.css")
+    <title>Register - SpiderShop</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-container">
+            <div class="child-container">
+                <img class="img" src="~/Content/Login/istockphoto-1332615317-612x612.jpg">
+            </div>
+            <div class="child-container">
+                @using (Html.BeginForm("Register", "Customer", FormMethod.Post, new { @class = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "error" })
+                    <p class="title"><span style="color: white;">REGISTER</span></p>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Username</p>
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "textbox-input", placeholder = "username", maxlength = 20 } })
+                        <p class="textbox-description">Enter your username</p>
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "error" })
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Password</p>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "textbox-input", placeholder = "password", maxlength = 20, type = "password" } })
+                        <p class="textbox-description">Enter your password, password must over 8 digit, upper character, number character and specal character</p>
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "error" })
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Re-Password</p>
+                        @Html.Editor("rePassword", new { htmlAttributes = new { @class = "textbox-input", placeholder = "re-password", maxlength = 20, type = "password" } })
+                        <p class="textbox-description">Again enter password</p>
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Fullname</p>
+                        @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { @class = "textbox-input", placeholder = "Ex: An", maxlength = 20 } })
+                        <p class="textbox-description">Enter your firstname</p>
+                        @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "error" })
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Fullname</p>
+                        @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { @class = "textbox-input", placeholder = "Ex: Pham Minh", maxlength = 20 } })
+                        <p class="textbox-description">Enter your lastname</p>
+                        @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "error" })
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Email</p>
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "textbox-input", placeholder = "Ex: abc@gmail.com", type = "email", maxlength = 30 } })
+                        <div style="height: 12px;"></div>
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "error" })
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Phone</p>
+                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "textbox-input", placeholder = "Ex: 039xxx3864", type = "tel", maxlength = 20 } })
+                        <div style="height: 12px;"></div>
+                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "error" })
+                    </div>
+                    <div class="textbox-area">
+                        <p class="textbox-title">Address</p>
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "textbox-input", placeholder = "Ex: 6 Tran Van On, Phu Hoa, TDM, BD", maxlength = 100 } })
+                        <div style="height: 12px;"></div>
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "error" })
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <p class="error">@ViewBag.Error</p>
+                    </div>
+                    <button style="submit" value="register" class="btn">REGISTER</button>
+                    <a class="btn" style="background-color: #599148;" href="@Url.Action("Login", "Customer")">BACK TO LOGIN</a>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

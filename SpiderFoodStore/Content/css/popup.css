@@ -1,0 +1,98 @@
+﻿#showConfirmation {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 20px;
+    justify-content: center;
+}
+
+.popup-area {
+    height: 200px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#closePopup {
+    margin-right: 10px;
+}
+
+a.logo {
+    color: black;
+    background-color: lavender;
+    padding: 6px;
+    width: 180px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6px;
+}
+
+    a.logo:hover {
+        color: none;
+    }
+
+    a.logo span.red {
+        color: #d93934;
+    }
+
+    a.logo span.blue {
+        color: #265ba3;
+    }
+
+    a.logo span.bold {
+        font-weight: bold;
+    }
+
+.popup-header {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.popup-question, .popup-gr-btn {
+    margin-top: 40px;
+}
+
+.popup-btn {
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+    background-color: crimson;
+    color: black;
+    border-radius: 5px;
+}
+
+    .popup-btn:hover {
+        color: white;
+    }
+
+.popup-gr-btn .active {
+    background-color: cadetblue;
+}
+
+
+@media screen and (max-width: 909px) {
+    #showConfirmation {
+        padding: 0;
+        align-items: center;
+    }
+
+    .popup-area {
+        width: 90%;
+    }
+}

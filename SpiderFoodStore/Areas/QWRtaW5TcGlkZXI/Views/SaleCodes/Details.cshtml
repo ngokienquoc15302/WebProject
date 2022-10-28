@@ -1,0 +1,43 @@
+﻿@model SpiderFoodStore.Models.SaleCode
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/QWRtaW5TcGlkZXI/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SaleCode</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscountValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscountValue)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new {@class = "btn btn-warning mr-3", @role = "button" })
+    @Html.ActionLink("Back to List", "Index", routeValues: null, htmlAttributes: new { @class = "btn btn-secondary", @role = "button" })
+</p>

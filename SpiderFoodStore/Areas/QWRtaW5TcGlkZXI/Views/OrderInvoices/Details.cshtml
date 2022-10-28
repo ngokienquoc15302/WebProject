@@ -1,0 +1,91 @@
+﻿@model SpiderFoodStore.Models.OrderInvoice
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/QWRtaW5TcGlkZXI/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OrderInvoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfConsignee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfConsignee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressOfConsignee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressOfConsignee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneOfConsignee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneOfConsignee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isDelivered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isDelivered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPaid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, htmlAttributes: new { @class = "btn btn-warning mr-3", @role = "button" })
+    @Html.ActionLink("Back to List", "Index", routeValues: null, htmlAttributes: new { @class = "btn btn-secondary", @role = "button" })
+</p>

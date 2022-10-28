@@ -1,0 +1,15 @@
+﻿@using SpiderFoodStore.Models
+@model IEnumerable<SpiderFoodStore.Models.Category>
+
+<div class="hero__categories">
+    <div class="hero__categories__all">
+        <i class="fa fa-bars"></i>
+        <span>All departments</span>
+    </div>
+    <ul>
+        @foreach(Category item in Model)
+        {
+            <li><a href="@Url.Action("ShopGrid", "Product", new {category = item.Id})">@item.Name</a></li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,41 @@
+﻿@model SpiderFoodStore.Models.Customer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/Login/stylesLogin.css")
+    <title>Login - SpiderShop</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-container">
+            <div class="child-container">
+                <img class="img" src="~/Content/Login/istockphoto-1332615317-612x612.jpg">
+            </div>
+            <div class="child-container">
+                @using (Html.BeginForm("Login", "Customer", FormMethod.Post, new {@class = "form"}))
+                {
+                    @Html.AntiForgeryToken()
+                    <p class="title"><span style="color: white;">SPIDER</span>SHOP</p>
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "txb", maxlength = 20, placeholder = "Enter Username" } })
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "txb", maxlength = 20, placeholder = "Enter Password", type = "password" } })
+                    <p class="error">@ViewBag.Error</p>
+                    <button type="submit" value="login" class="btn">LOGIN</button>
+                    <a class="btn" style="background-color: #599148;" href="@Url.Action("Register", "Customer")">REGISTER</a>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

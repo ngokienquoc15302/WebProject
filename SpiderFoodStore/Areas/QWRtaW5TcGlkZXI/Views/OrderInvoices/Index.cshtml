@@ -1,0 +1,92 @@
+﻿@model IEnumerable<SpiderFoodStore.Models.OrderInvoice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/QWRtaW5TcGlkZXI/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("Create", "OrderInvoices")" class="btn btn-success" role="button">Create New</a>
+</p>
+<table class="table table-dark table-hover">
+    <tr>
+        <th>
+            No.
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfConsignee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneOfConsignee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isDelivered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPaid)
+        </th>
+        <th></th>
+    </tr>
+    @{ int no = 0;}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{no++;}
+                @no
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfConsignee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneOfConsignee)
+            </td>
+            <td>
+                @if (item.isDelivered)
+                {
+                    <p><i class="fa fa-check-circle" aria-hidden="true" style="color: cadetblue; font-size: 18px;"></i></p>
+                }
+                else
+                {
+                    <p>-</p>
+                }
+            </td>
+            <td>
+                @if (item.isPaid)
+                {
+                    <p><i class="fa fa-check-circle" aria-hidden="true" style="color: cadetblue; font-size: 18px;"></i></p>
+                }
+                else
+                {
+                    <p>-</p>
+                }
+            </td>
+            <td>
+                <a href="@Url.Action("Edit", "OrderInvoices", new {id=item.Id})" class="btn btn-warning" role="button"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                <a href="@Url.Action("Details", "OrderInvoices", new {id=item.Id})" class="btn btn-info" role="button"><i class="fa fa-info-circle" aria-hidden="true"></i> Details</a>
+                <a href="@Url.Action("Delete", "OrderInvoices", new {id=item.Id})" class="btn btn-danger" role="button"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>
